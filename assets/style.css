@@ -1,11 +1,23 @@
 body{
 	--base-size:12px;
-	--gutter-size:calu
+	--gutter-size:calc(3* var(--bas));
 	
 
 	--color--primary:black;
 	--color--secondary:gold;
-	--color--background:white;
+	--color--background:tomato;
+
+	header{
+		background-color: var(--color--background);
+		padding-block: calc(5* var(--base-size));
+	}
+
+	footer{
+		padding-top: var()
+	}
+	.gutters {
+		padding-inline: var(--gutter--size);
+	}
 
 
 
