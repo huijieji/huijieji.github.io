@@ -1,24 +1,32 @@
-body{
-	--base-size:12px;
-	--gutter-size:calc(3* var(--bas));
-	
 
-	--color--primary:black;
-	--color--secondary:gold;
-	--color--background:tomato;
+body {
+	--base-size: 12px;
+	--gutter-size: calc(3 * var(--base-size));
 
-	header{
-		background-color: var(--color--background);
-		padding-block: calc(5* var(--base-size));
-	}
+	--color-primary: black;
+	--color-secondary: gold;
+	--color--background: tomato;
+}
 
-	footer{
-		padding-top: var()
-	}
-	.gutters {
-		padding-inline: var(--gutter--size);
-	}
+header {
+	background-color: var(--color--background);
+	padding-block: calc(5 * var(--base-size));	
+}
 
+section {
+	block-size: 75vh;
+}
 
+footer {
+	background-color: var(--color-secondary);
+	padding-top: var(--base-size);
+	padding-bottom: calc(5 * var(--base-size));
+}
 
+.gutters {
+	padding-inline: var(--gutter-size);
+}
+
+#main-content {
+	block-size: 75vh;
 }
