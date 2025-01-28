@@ -4,21 +4,29 @@ body {
 	--gutter-size: calc(3 * var(--base-size));
 
 	--color-primary: black;
-	--color-secondary: gold;
-	--color--background: tomato;
+	--color-secondary:rgb(183, 158, 89);
+	--color--background: rgb(232, 232, 232);
+}
+
+@font-face {
+	font-family: 'Pangram Sans Compressed';
+	src: url('../font/PPPangramSans-CompressedExtrabold.woff2') format('woff2');
+	font-weight: normal;
+	font-style: normal;
 }
 
 header {
-	background-color: var(--color--background);
-	padding-block: calc(5 * var(--base-size));	
+	/* background-color: var(--color--background); */
+	padding-block: calc(4 * var(--base-size));
+
 }
 
 section {
-	block-size: 75vh;
+	block-size: 90vh;
 }
 
 footer {
-	background-color: var(--color-secondary);
+	background-color: var(--color--background);
 	padding-top: var(--base-size);
 	padding-bottom: calc(5 * var(--base-size));
 }
@@ -28,5 +36,74 @@ footer {
 }
 
 #main-content {
-	block-size: 75vh;
+	block-size: 70vh;
+}
+
+body{
+	font-family: 'Playfair Display', serif;
+	font-size: 18px;
+	line-height: 1.8;
+	color: #333;
+	background-color: #f9f9f9;
+	padding: 20px;
+}
+/* 
+header{
+	margin-bottom: 10px;
+} */
+
+header h1 {
+	font-size:5rem;
+	font-weight:700;
+	/* font-family: 'Pangram Sans', sans-serif; */
+	color:rgb(139, 119, 92);
+}
+
+h2{
+	font-size:1.5rem;
+	font-weight:700;
+}
+section{
+	max-width: 800px;
+	margin: 0 auto;
+	padding: 10px;
+}
+
+section ul {
+	display: grid;
+	gap: 20px;
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+section li {
+	padding: 15px;
+	text-align: center;
+	transition: transform 0.3s;
+}
+section li:hover {
+	transform: translateY(-5px);
+}
+
+section a {
+	color: var(--color-secondary);
+}
+
+section p {
+	margin-bottom: 5px;
+	font-size: 1.3rem;
+}
+
+section em {
+	font-style: italic;
+	color: #555;
+}
+
+/* footer {
+	margin-top: 30px;
+	font-size: 1rem;
+} */
+
+footer p {
+	text-align: center;
+	padding-top: 50px;
 }
