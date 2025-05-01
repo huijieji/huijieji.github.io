@@ -16,7 +16,7 @@ body {
 }
 
 header {
-	padding-block: calc(4 * var(--base-size));
+	padding-block: calc(3 * var(--base-size));
 
 }
 
