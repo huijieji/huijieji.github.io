@@ -58,13 +58,8 @@ header{
 	margin-bottom: 50px;
 } */
 
-.profile-image {
-	flex: 1;
-	margin-right: 40px;
-}
-
-.profile-image img {
-	width: 100%;
+.logo-image {
+	width: 10%;
 	height: auto;
 	border-radius: 2px;
 }
