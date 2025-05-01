@@ -22,7 +22,7 @@ header {
 }
 
 section {
-	block-size: 60vh;
+	block-size: 70vh;
 }
 
 footer {
@@ -36,7 +36,7 @@ footer {
 }
 
 #main-content {
-	block-size: 80vh;
+	block-size: 90vh;
 }
 
 body{
@@ -90,6 +90,7 @@ section{
 	max-width: 800px;
 	margin: 0 auto;
 	padding: 10px;
+	overflow: hidden;
 }
 
 section ul {
@@ -121,12 +122,24 @@ section em {
 	color: #555;
 }
 
+  .main-content::after {
+	content: "";
+	display: table;
+	clear: both;
+  }
+  
+  .profile-image {
+	float: left;
+	margin-right: 2rem;
+  }
+
+/* Footer Styles */
 footer {
 	margin-top: 30px;
 	font-size: 1.2rem;
 }
 
-   /* Footer Styles */
+ 
    footer {
 	padding: 50px;
 	text-align: center;
@@ -154,6 +167,7 @@ footer .links a::after {
 	left: 0;
 	background-color: var(--color-secondary);
 }
+
 
         /* Responsive Styles */
         @media (max-width: 750px) {
