@@ -58,6 +58,12 @@ header{
 	margin-bottom: 50px;
 } */
 
+.profile-image {
+	width: 80%;
+	height: auto;
+	border-radius: 2px;
+}
+
 .logo-image {
 	width: 10%;
 	height: auto;
