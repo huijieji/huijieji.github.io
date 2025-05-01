@@ -22,7 +22,7 @@ header {
 }
 
 section {
-	block-size: 45vh;
+	block-size: 60vh;
 }
 
 footer {
@@ -158,7 +158,7 @@ footer .links a::after {
         /* Responsive Styles */
         @media (max-width: 750px) {
             .logo-image {
-                width: 25%;
+                width: 29%;
 				padding-left: 20px;
             }
             
@@ -167,7 +167,7 @@ footer .links a::after {
             }
 
 			section {
-				block-size: 85vh;
+				block-size: 95vh;
 			}
 			
 			.profile-image{
@@ -194,6 +194,10 @@ footer .links a::after {
 
 			section li {
 				padding:10px;
+			}
+
+			section p {
+				font-size:1.6rem;
 			}
 
         }
