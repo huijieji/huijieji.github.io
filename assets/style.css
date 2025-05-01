@@ -22,7 +22,7 @@ header {
 }
 
 section {
-	block-size: 60vh;
+	block-size: 45vh;
 }
 
 footer {
@@ -36,7 +36,7 @@ footer {
 }
 
 #main-content {
-	block-size: 10vh;
+	block-size: 80vh;
 }
 
 body{
@@ -47,6 +47,12 @@ body{
 	background-color: #f9f9f9;
 	padding: 20px;
 }
+
+.profile-image{
+	width: 45%;
+	height: auto;
+}
+
 /* 
 header{
 	margin-bottom: 10px;
@@ -152,10 +158,45 @@ footer .links a::after {
         /* Responsive Styles */
         @media (max-width: 750px) {
             .logo-image {
-                width: 20%;
+                width: 25%;
+				padding-left: 20px;
             }
             
             section ul {
                 grid-template-columns: 1fr;
             }
+
+			section {
+				block-size: 85vh;
+			}
+			
+			.profile-image{
+				width: 100%;
+				height: auto;
+				padding-bottom: 20px;
+			}
+
+			header {
+				/* background-color: var(--color--background); */
+				padding-block: calc(1.5 * var(--base-size));
+			
+			}
+
+			body {
+				padding: 0px;
+				text-align: center;
+			}
+
+			footer{
+				line-height: 4vh;
+				margin-top:2px;
+			}
+
+			section li {
+				padding:10px;
+			}
+
         }
+
+
+
