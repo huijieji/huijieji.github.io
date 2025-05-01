@@ -22,7 +22,7 @@ header {
 }
 
 section {
-	block-size: 90vh;
+	block-size: 60vh;
 }
 
 footer {
@@ -36,7 +36,7 @@ footer {
 }
 
 #main-content {
-	block-size: 20vh;
+	block-size: 10vh;
 }
 
 body{
@@ -148,3 +148,14 @@ footer .links a::after {
 	left: 0;
 	background-color: var(--color-secondary);
 }
+
+        /* Responsive Styles */
+        @media (max-width: 750px) {
+            .logo-image {
+                width: 20%;
+            }
+            
+            section ul {
+                grid-template-columns: 1fr;
+            }
+        }
