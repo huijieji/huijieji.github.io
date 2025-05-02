@@ -16,12 +16,13 @@ body {
 }
 
 header {
-	padding-block: calc(3 * var(--base-size));
+	padding-block: calc(2 * var(--base-size));
+	block-size: 30vh;
 
 }
 
 section {
-	block-size: 70vh;
+	block-size: 60vh;
 }
 
 footer {
@@ -151,6 +152,24 @@ footer .links a::after {
 
 
 /* Responsive Styles */
+@media (max-width: 1100px) {
+	.profile-image{
+		width: 63%;
+		height: auto;
+		padding-bottom: 20px;
+	}
+	.logo-image {
+		width: 15%;
+		height: auto;
+	}
+	section {
+		block-size: 75vh;
+	}
+
+	section li {
+		padding:2px;
+	}
+}
  @media (max-width: 750px) {
 
 .logo-image {
