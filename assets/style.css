@@ -21,9 +21,6 @@ header {
 
 }
 
-section {
-	block-size: 60vh;
-}
 
 footer {
 	background-color: var(--color--background);
@@ -68,11 +65,13 @@ h2{
 	font-size:1.5rem;
 	font-weight:700;
 }
+
 section{
 	max-width: 800px;
 	margin: 0 auto;
 	padding: 10px;
 	overflow: hidden;
+	block-size: 62vh;
 }
 
 section ul {
@@ -173,7 +172,7 @@ footer .links a::after {
  @media (max-width: 750px) {
 
 .logo-image {
-	width: 29%;
+	width: 20%;
 	padding-left: 20px;
 }
 
