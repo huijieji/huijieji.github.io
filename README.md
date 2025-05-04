@@ -1,0 +1,1 @@
+This landing page showcases five of my code projects. The design follows the same minimalist style（ clean lines, subtle typography, and a minimalist layout ） as my personal website, keeping everything clean and simple.
