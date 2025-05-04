@@ -174,23 +174,24 @@ section em {
 
 }
 
-
 /* Footer Styles */
 footer {
+	background-color: var(--color-background);
+	padding-top: var(--base-size);
+	padding-bottom: calc(5 * var(--base-size));
 	margin-top: 30px;
 	font-size: 1.2rem;
-}
-
- 
-footer {
 	padding: 50px;
 	text-align: center;
+	transition: padding var(--transition-default), margin var(--transition-default);
 }
 
 footer .links {
 	display: flex;
 	justify-content: center;
 	gap: 30px;
+	transition: gap var(--transition-default), flex-direction var(--transition-slow);
+
 }
 
 footer .links a {
@@ -198,6 +199,11 @@ footer .links a {
 	text-decoration: none;
 	font-weight: 500;
 	position: relative;
+	transition: transform var(--transition-default);
+}
+
+footer .links a:hover {
+	transform: translateY(-3px);
 }
 
 footer .links a::after {
@@ -208,6 +214,8 @@ footer .links a::after {
 	bottom: -5px;
 	left: 0;
 	background-color: var(--color-secondary);
+	transition: transform 0.3s ease;
+	transform-origin: right;
 }
 
 
