@@ -37,6 +37,16 @@ header {
 	transition: block-size var(--transition-slow), padding var(--transition-default);
 }
 
+.logo-image {
+	width: 10%;
+	height: auto;
+	transition: width var(--transition-default), padding var(--transition-default), transform 0.7s ease;
+}
+
+.logo-image:hover {
+	transform: rotate(5deg) scale(1.05);
+}
+
 footer {
 	background-color: var(--color--background);
 	padding-top: var(--base-size);
@@ -62,10 +72,6 @@ body{
 	height: auto;
 }
 
-.logo-image {
-	width: 10%;
-	height: auto;
-}
 
 header h1 {
 	font-size:5rem;
