@@ -60,11 +60,11 @@ h2 {
 	transition: font-size var(--transition-default);
 }
 
-footer {
+/* footer {
 	background-color: var(--color--background);
 	padding-top: var(--base-size);
 	padding-bottom: calc(5 * var(--base-size));
-}
+} */
 
 /* main content style */
 #main-content {
@@ -101,53 +101,79 @@ body{
 	padding: 20px;
 }
 
+/* section style */
 section{
 	max-width: 800px;
 	margin: 0 auto;
 	padding: 10px;
 	overflow: hidden;
 	block-size: 62vh;
+	transition: block-size var(--transition-slow), padding var(--transition-default);
 }
 
 section ul {
 	display: grid;
 	gap: 20px;
 	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+	transition: grid-template-columns var(--transition-default);
+	animation: staggeredFadeIn 1s ease-out forwards;
+}
+
+@keyframes staggeredFadeIn {
+	from { opacity: 0; transform: translateY(30px); }
+	to { opacity: 1; transform: translateY(0); }
 }
 
 section li {
 	padding: 15px;
 	text-align: center;
-	transition: transform 0.3s;
+	transition: transform 0.3s ease, padding var(--transition-default), margin var(--transition-default);
+	position: relative;
+	overflow: hidden;
 }
+section li::before {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 0%;
+	height: 2px;
+	background-color: var(--color-secondary);
+	transition: width 0.3s ease;
+	opacity: 0.7;
+}
+
 section li:hover {
 	transform: translateY(-5px);
 }
 
+section li:hover::before {
+	width: 100%;
+}
+
 section a {
 	color: var(--color-secondary);
+	text-decoration: none;
+	transition: color 0.3s ease;
+}
+
+section a:hover {
+	color: rgba(183, 158, 89, 0.8);
 }
 
 section p {
 	margin-bottom: 5px;
 	font-size: 1.3rem;
+	transition: font-size var(--transition-default);
 }
 
 section em {
 	font-style: italic;
 	color: #555;
+	transition: color var(--transition-default);
+
 }
 
-  .main-content::after {
-	content: "";
-	display: table;
-	clear: both;
-  }
-
-  .profile-image {
-	float: left;
-	margin-right: 2rem;
-  }
 
 /* Footer Styles */
 footer {
