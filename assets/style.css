@@ -216,8 +216,13 @@ footer .links a::after {
 	background-color: var(--color-secondary);
 	transition: transform 0.3s ease;
 	transform-origin: right;
+	transform: scaleX(1);
 }
 
+footer .links a:hover::after {
+	transform-origin: left;
+	transform: scaleX(1.1);
+}
 
 /* Responsive Styles */
 @media (max-width: 1100px) {
