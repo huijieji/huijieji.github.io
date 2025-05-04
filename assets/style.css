@@ -230,63 +230,80 @@ footer .links a:hover::after {
 		width: 63%;
 		height: auto;
 		padding-bottom: 20px;
+		transition: width var(--transition-slow);
 	}
+
 	.logo-image {
 		width: 15%;
 		height: auto;
+		transition: width var(--transition-default);
 	}
+
 	section {
 		block-size: 75vh;
+		transition: block-size var(--transition-slow);
 	}
 
 	section li {
 		padding:2px;
+		transition: padding var(--transition-default);
 	}
 }
+
  @media (max-width: 750px) {
 
 .logo-image {
 	width: 30%;
 	padding-left: 20px;
+	transition: width var(--transition-default), padding var(--transition-default);
 }
 
 section ul {
 	grid-template-columns: 1fr;
+	transition: grid-template-columns var(--transition-default);
 }
 
 section {
 	block-size: 95vh;
+	transition: block-size var(--transition-slow);
+
 }
 
 .profile-image{
 	width: 100%;
 	height: auto;
 	padding-bottom: 20px;
+	transition: width var(--transition-slow), padding var(--transition-default);
+
 }
 
 header {
-	/* background-color: var(--color--background); */
 	padding-block: calc(1.5 * var(--base-size));
+	transition: padding var(--transition-default);
 }
 
 body {
 	padding: 0px;
 	text-align: center;
+	transition: padding var(--transition-default);
 }
 
 footer{
 	line-height: 4vh;
 	margin-top:2px;
+	transition: margin var(--transition-default), line-height var(--transition-default);
+
 }
 
 section li {
 	padding:10px;
+	transition: padding var(--transition-default);
 }
 
 section p {
 	font-size:1.6rem;
+	transition: font-size var(--transition-default);
 }
-
 }
 
 
