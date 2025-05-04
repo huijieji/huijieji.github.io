@@ -1,3 +1,13 @@
+:root {
+	--base-size: 12px;
+	--gutter-size: calc(3 * var(--base-size));
+	--color-primary: black;
+	--color-secondary: rgb(183, 158, 89);
+	--color-background: rgb(232, 232, 232);
+	--transition-default: 0.3s ease;
+	--transition-slow: 0.5s ease;
+}
+
 /* default style */
 * {
 	margin: 0;
