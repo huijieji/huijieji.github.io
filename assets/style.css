@@ -70,12 +70,6 @@ h2 {
 	transition: font-size var(--transition-default);
 }
 
-/* footer {
-	background-color: var(--color--background);
-	padding-top: var(--base-size);
-	padding-bottom: calc(5 * var(--base-size));
-} */
-
 /* main content style */
 #main-content {
 	block-size: 90vh;
