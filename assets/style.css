@@ -21,6 +21,12 @@ body {
 	--color-primary: black;
 	--color-secondary:rgb(183, 158, 89);
 	--color--background: rgb(232, 232, 232);
+	font-family: 'Playfair Display', serif;
+	font-size: 18px;
+	line-height: 1.8;
+	color: #333;
+	background-color: #f9f9f9;
+	padding: 20px;
 }
 
 img {
@@ -40,7 +46,7 @@ img {
 	font-style: normal;
 }
 
-/* hearder style */
+/* header style */
 header {
 	padding-block: calc(2 * var(--base-size));
 	block-size: 30vh;
@@ -96,21 +102,14 @@ h2 {
 	to { opacity: 1; transform: translateY(0); }
 }
 
-body{
-	font-family: 'Playfair Display', serif;
-	font-size: 18px;
-	line-height: 1.8;
-	color: #333;
-	background-color: #f9f9f9;
-	padding: 20px;
-}
-
 /* section style */
 section{
 	max-width: 800px;
 	margin: 0 auto;
+	margin-left: auto; /* 让section往右移 */
+	margin-right: 50px; /* 增加右边距，让项目往右移 */
 	padding: 10px;
-	overflow: hidden;
+	overflow: visible; /* Changed from hidden to allow previews to show */
 	block-size: 62vh;
 	transition: block-size var(--transition-slow), padding var(--transition-default);
 }
@@ -118,7 +117,7 @@ section{
 section ul {
 	display: grid;
 	gap: 20px;
-	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+	grid-template-columns: repeat(2, 1fr); /* 固定两列布局 */
 	transition: grid-template-columns var(--transition-default);
 	animation: staggeredFadeIn 1s ease-out forwards;
 }
@@ -133,8 +132,36 @@ section li {
 	text-align: center;
 	transition: transform 0.3s ease, padding var(--transition-default), margin var(--transition-default);
 	position: relative;
-	overflow: hidden;
+	overflow: visible; /* Changed to allow preview images to show */
 }
+
+/* Website preview iframe */
+section li a::after {
+	content: '';
+	position: absolute;
+	top: -220px;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 320px;
+	height: 200px;
+	border: 3px solid var(--color-secondary);
+	border-radius: 12px;
+	opacity: 0;
+	visibility: hidden;
+	transition: all 0.4s ease;
+	z-index: 1000;
+	box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+	overflow: hidden;
+	background: white;
+}
+
+/* Create iframe preview on hover using data attributes */
+section li:hover a::after {
+	opacity: 1;
+	visibility: visible;
+	transform: translateX(-50%) translateY(-10px) scale(1.02);
+}
+
 section li::before {
 	content: '';
 	position: absolute;
@@ -155,10 +182,63 @@ section li:hover::before {
 	width: 100%;
 }
 
+/* Project Preview Image Styles */
+.project-preview {
+	position: absolute;
+	top: -220px;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 320px;
+	height: 200px;
+	background: white;
+	border: 3px solid var(--color-secondary);
+	border-radius: 12px;
+	overflow: hidden;
+	opacity: 0;
+	visibility: hidden;
+	transition: all 0.4s ease;
+	z-index: 1000;
+	box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+}
+
+.project-preview img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	transition: transform 0.3s ease;
+}
+
+.project-preview::after {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 30px;
+	background: linear-gradient(to top, rgba(0,0,0,0.1), transparent);
+	pointer-events: none;
+}
+
+section li:hover .project-preview {
+	opacity: 1;
+	visibility: visible;
+	transform: translateX(-50%) translateY(-10px) scale(1.02);
+}
+
+section li:hover .project-preview img {
+	transform: scale(1.05);
+}
+
+/* Add a subtle glow effect on hover */
+section li:hover {
+	filter: drop-shadow(0 5px 15px rgba(183, 158, 89, 0.3));
+}
+
 section a {
 	color: var(--color-secondary);
 	text-decoration: none;
 	transition: color 0.3s ease;
+	display: block;
 }
 
 section a:hover {
@@ -175,7 +255,6 @@ section em {
 	font-style: italic;
 	color: #555;
 	transition: color var(--transition-default);
-
 }
 
 /* Footer Styles */
@@ -195,7 +274,6 @@ footer .links {
 	justify-content: center;
 	gap: 30px;
 	transition: gap var(--transition-default), flex-direction var(--transition-slow);
-
 }
 
 footer .links a {
@@ -252,62 +330,69 @@ footer .links a:hover::after {
 		padding:2px;
 		transition: padding var(--transition-default);
 	}
+
+	/* Adjust preview size for medium screens */
+	section li a::before {
+		width: 280px;
+		height: 180px;
+		top: -200px;
+	}
 }
 
- @media (max-width: 750px) {
+@media (max-width: 750px) {
+	.logo-image {
+		width: 30%;
+		padding-left: 20px;
+		transition: width var(--transition-default), padding var(--transition-default);
+	}
 
-.logo-image {
-	width: 30%;
-	padding-left: 20px;
-	transition: width var(--transition-default), padding var(--transition-default);
+	section ul {
+		grid-template-columns: 1fr; /* 移动端保持单列 */
+		transition: grid-template-columns var(--transition-default);
+	}
+
+	section {
+		block-size: 95vh;
+		transition: block-size var(--transition-slow);
+	}
+
+	.profile-image{
+		width: 100%;
+		height: auto;
+		padding-bottom: 20px;
+		transition: width var(--transition-slow), padding var(--transition-default);
+	}
+
+	header {
+		transition: padding var(--transition-default);
+	}
+
+	body {
+		padding: 0px;
+		text-align: center;
+		transition: padding var(--transition-default);
+	}
+
+	footer{
+		line-height: 4vh;
+		margin-top:2px;
+		transition: margin var(--transition-default), line-height var(--transition-default);
+	}
+
+	section li {
+		padding:10px;
+		transition: padding var(--transition-default);
+	}
+
+	section p {
+		font-size:1.6rem;
+		transition: font-size var(--transition-default);
+	}
+
+	/* Adjust preview size for mobile */
+	section li a::before {
+		width: 240px;
+		height: 150px;
+		top: -170px;
+	}
 }
-
-section ul {
-	grid-template-columns: 1fr;
-	transition: grid-template-columns var(--transition-default);
-}
-
-section {
-	block-size: 95vh;
-	transition: block-size var(--transition-slow);
-
-}
-
-.profile-image{
-	width: 100%;
-	height: auto;
-	padding-bottom: 20px;
-	transition: width var(--transition-slow), padding var(--transition-default);
-
-}
-
-header {
-	transition: padding var(--transition-default);
-}
-
-body {
-	padding: 0px;
-	text-align: center;
-	transition: padding var(--transition-default);
-}
-
-footer{
-	line-height: 4vh;
-	margin-top:2px;
-	transition: margin var(--transition-default), line-height var(--transition-default);
-
-}
-
-section li {
-	padding:10px;
-	transition: padding var(--transition-default);
-}
-
-section p {
-	font-size:1.6rem;
-	transition: font-size var(--transition-default);
-}
-}
-
-
-
