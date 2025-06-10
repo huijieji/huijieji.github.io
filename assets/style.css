@@ -78,7 +78,7 @@ h2 {
 
 /* main content style */
 #main-content {
-	block-size: 1000vh;
+	block-size: 200vh;
 	transition: block-size var(--transition-slow);
 }
 
